@@ -7,6 +7,8 @@ import AllTexts from '../components/AllTexts/AllTexts'
 // import Nav from '../components/Nav/Nav'
 import SingleText from '../components/SingleText/SingleText'
 // import UpdateText from '../components/UpdateText/UpdateText'
+import AddQuestion from '../components/AddQuestion/AddQuestion'
+//import AllQuestions from '../components/AllQuestions/AllQuestions'
 
 function App() {
  
@@ -23,7 +25,8 @@ function App() {
 {/* <Route path='/' element={<Home/>} /> */}
 <Route path='/texts/:textId' element={<SingleText/>} />
 {/* <Route path='/texts/:textId/edit' element={<UpdateText/>} />  */}
-
+<Route path='/texts/:textId/add' element={<AddQuestion/>} />
+{/* <Route path='/questions' element={<AllQuestions/>} /> */}
 </Routes>
 
     </>

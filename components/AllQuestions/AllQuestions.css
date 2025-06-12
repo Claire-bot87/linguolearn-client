@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+.new-text {
+   
+    background-image: url(./plus.png);
+    width: 40px;
+    height: 40px;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    margin:0px 60px 0px 220px;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--brand);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alltexts-article{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    margin:50px;
+
+}
+
+.textContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+height: 100vh ;
+
+}
+
+.allfooditems-article{
+display: flex;
+    flex-direction: row;
+    
+    height: 100vh;
+
+}
+
+@media (max-width:480px) {
+
+.textContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr; */
+
+
+}
+}

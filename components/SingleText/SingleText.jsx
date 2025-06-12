@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router'
 import TextCard from '../../components/TextCard/TextCard.jsx'
+import AllQuestions from '../../components/AllQuestions/AllQuestions.jsx'
 import { useContext } from 'react'
 import { UserContext } from '../../src/contexts/UserContext'
 import { useState, useEffect } from 'react'
@@ -54,7 +55,7 @@ export default function SingleText() {
       <div className="childcard-div">
         {text && <TextCard text={text}  />}
       </div>
-    
+    < AllQuestions text = {text} />
       </div>
     </>
   )
