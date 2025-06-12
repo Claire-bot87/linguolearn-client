@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.container-box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space between elements */
+    align-items: center;
+    font-family: 'Outfit';
+    color: rgb(241, 203, 9);
+    
+  }
+
+  form {
+   
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    background: rgb(241, 203, 9);
+    color:black;
+  }
+  
+
+.input{
+  color:black;
+  margin:1rem;
+  /* background-color: rgb(241, 203, 9); */
+}
+
+.form-control{
+  /* background-color: rgb(241, 203, 9); */
+  margin:1rem;
+}
