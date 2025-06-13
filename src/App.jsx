@@ -4,19 +4,23 @@ import Signin from '../components/Signin/Signin'
 import AddText from '../components/AddText/AddText'
 import AllTexts from '../components/AllTexts/AllTexts'
 // import Home from '../components/Home/Home'
-// import Nav from '../components/Nav/Nav'
+import Nav from '../components/Nav/Nav'
 import SingleText from '../components/SingleText/SingleText'
 // import UpdateText from '../components/UpdateText/UpdateText'
 import AddQuestion from '../components/AddQuestion/AddQuestion'
 //import AllQuestions from '../components/AllQuestions/AllQuestions'
+import TitleComponent from '../components/TitleComponent/TitleComponent.jsx'
 
 function App() {
  
 
   return (
     <>
-<h1>Hello World</h1>
-{/* <Nav /> */}
+<div className='home'>
+  <div className='nav-div'>
+<Nav />
+</div>
+       {/* <TitleComponent /> */}
 <Routes>
 <Route path='/signup' element={<Signup/>} />
 <Route path='/signin' element={<Signin/>} />
@@ -28,7 +32,7 @@ function App() {
 <Route path='/texts/:textId/add' element={<AddQuestion/>} />
 {/* <Route path='/questions' element={<AllQuestions/>} /> */}
 </Routes>
-
+</div>
     </>
   )
 }

@@ -11,7 +11,8 @@ import '../../src/App.css'
 export default function AllTexts(){
  
     const [texts, setTexts]= useState ([])
-   
+    const [searchTerm, setSearchTerm] = useState('')
+    const [displayedTexts, setDisplayedTexts] = useState([])
     
     useEffect(() => {
     textIndex()
@@ -20,11 +21,35 @@ export default function AllTexts(){
     .catch(err => console.log(err))
     }, [])
 
+    useEffect(() => {
+        let results = texts
+ if (searchTerm) {
+            results = results.filter(text => 
+            text.name.toLowerCase().startsWith(searchTerm.toLowerCase()))
+        }
+             setDisplayedTexts(results)
 
+    }, [ searchTerm, texts ])
+
+    const handleSearch = (e) => {
+        setSearchTerm(e.target.value.toLowerCase())
+    }
   
 
     return (
-    <article className="allfooditems-article">
+ <div>
+              <div className='search'>
+                <i className="search-bar"> </i>
+                <input 
+                    type="search" 
+                    name="search" 
+                    id="search" 
+                    placeholder="Search..." 
+                    onChange={handleSearch}
+                    value={searchTerm}
+                />
+                </div> 
+<article className="allfooditems-article">
 
 
         {/* {texts.length > 0 
@@ -33,8 +58,8 @@ export default function AllTexts(){
 
 } */}
 <div className='textContainer'>
-        {texts.length > 0 
-? texts.map(text => <TextCard key={text._id} text={text}  />)
+        {displayedTexts.length > 0 
+? displayedTexts.map(text => <TextCard key={text._id} text={text}  />)
 : <p>There are no foodItems yet</p>
 
 }
@@ -52,5 +77,6 @@ export default function AllTexts(){
    {/* <TextCard text={text}  /> */}
 
 </article>
-    )
+</div>
+ )
 }

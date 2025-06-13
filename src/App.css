@@ -1,0 +1,15 @@
+*{
+    text-decoration: none;
+}
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+}
+
+.nav-div {
+    height:20vh;
+    text-decoration: none !important;
+}
