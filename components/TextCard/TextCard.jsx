@@ -17,7 +17,7 @@ const TextCard = ({ text }) => {
 
     const textId = text.id || text._id; // works with both views
 
-    const isHomepage = location.pathname === '/texts';
+    const isAllTextsPage = location.pathname === '/texts';
     const isSingleTextPage = location.pathname === `/texts/${textId}`;
 
 
@@ -38,30 +38,43 @@ const TextCard = ({ text }) => {
 
 
     return (
-<>
-
-
+        <>
+  {isSingleTextPage && (
             <div className="child-card-large">
                 <div className="for-name-and-image">
                     <h2>{text.name}</h2>
- 
-
                 </div>
-
                 <div className="single-child-box">
-                   <h5>{text.bodyoftext}</h5>
-     </div>
-                     
-                    </div>
+                    <h5>{text.bodyoftext}</h5>
+                </div>
+                <div className='add-question-container'>
+                    <Link to={`/texts/${text._id}/add`}>
+                <div className='add-question'></div>
+                </Link>
+                </div>
+            </div>
+)}
+
+ {isAllTextsPage && (
+<Link to={`/texts/${text._id}`}>
+            <div className="child-card-large">
+                <div className="for-name-and-image">
+                    <h2>{text.name}</h2>
+                </div>
+                <div className="single-child-box">
+                    <h5>{text.bodyoftext}</h5>
+                </div>
+                <div className='add-question-container'>
+                </div>
+            </div>
+</Link>
+)}
+
+        </>
+    )
+}
 
 
 
-
-
-                </>
-    )}
-
-  
-
-                export default TextCard
+export default TextCard
 

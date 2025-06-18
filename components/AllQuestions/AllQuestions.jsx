@@ -16,6 +16,7 @@ export default function AllQuestions({ text }){
    
     
     useEffect(() => {
+      console.log(' 💕 TEXT ID' + text?._id)
     questionIndex()
      .then(data => setQuestions(data))
     
@@ -37,7 +38,7 @@ export default function AllQuestions({ text }){
       ) : null
     )
   ) : (
-    <p>There are no foodItems yet</p>
+    <p>There are no questions yet</p>
   )}
 </div>
 

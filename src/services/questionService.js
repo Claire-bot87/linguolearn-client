@@ -31,14 +31,17 @@ export const textShow = async (textId) => {
 
 export const questionCreate = async (textId, questionData) => {
     console.log('text CREATE text SERVICE')
-    console.log(questionData)
+    console.log('QUESTION DATA ' + questionData)
+    console.log('TEXT ID' + textId)
+    console.log("TOKEN:", getToken())
     // eslint-disable-next-line no-useless-catch
     try {
-        const res = await axios.post(`${BASE_URL}/${textId}/questions`, questionData,{
+        const res = await axios.post(`${BASE_URL}/texts/${textId}/questions`, questionData,{
             headers: {
             Authorization: `Bearer ${getToken()}`,
             // 'Content-Type': 'application/json',
         }})
+        console.log('RES DATA' + res.data.questiontext)
         return res.data
     } catch(error) {
     throw error

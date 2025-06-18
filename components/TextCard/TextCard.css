@@ -167,3 +167,18 @@ justify-content: center;
           h5{
         color: white;
       }
+
+.add-question{
+width: 2.5rem;
+height: 2.5rem;
+background-image: url(./circle.png);
+background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.add-question-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}

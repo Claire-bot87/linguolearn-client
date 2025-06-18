@@ -55,7 +55,7 @@ export default function SingleText() {
       <div className="childcard-div">
         {text && <TextCard text={text}  />}
       </div>
-    < AllQuestions text = {text} />
+    {text && < AllQuestions text = {text} />}
       </div>
     </>
   )

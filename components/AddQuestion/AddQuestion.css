@@ -10,3 +10,32 @@
 .add-child-container h1{
     color: rgb(241, 203, 9);
 }
+
+.questions-list{
+    background-color: blueviolet;
+}
+
+.all-questions{
+    background-color: red;
+}
+
+.button {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  background-color: aquamarine;
+  border:#b71782;
+  margin: 0.4rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  height: 2rem;
+  width: 2rem;
+  background-image: url('/assets/heart.png');
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
