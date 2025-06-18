@@ -34,7 +34,7 @@
 
 }
 
-.textContainer{
+.alltextsContainer{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -44,7 +44,7 @@ height: 100vh ;
 
 }
 
-.allfooditems-article{
+.alltexts-article{
 display: flex;
     flex-direction: row;
     

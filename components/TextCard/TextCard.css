@@ -43,7 +43,7 @@
     border-radius: 1rem;
     padding: 1rem;
     font-family: 'Outfit';
-    max-height: 50vh;
+    height: 50vh;
   }
   
   .details{

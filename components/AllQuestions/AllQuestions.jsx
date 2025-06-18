@@ -27,7 +27,7 @@ export default function AllQuestions({ text }){
   
 
     return (
-    <article className="allfooditems-article">
+    <article className="alltexts-article">
 
 
 <div className='textContainer'>

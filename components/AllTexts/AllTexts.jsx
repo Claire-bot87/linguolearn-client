@@ -49,7 +49,7 @@ export default function AllTexts(){
                     value={searchTerm}
                 />
                 </div> 
-<article className="allfooditems-article">
+<article className="alltexts-article">
 
 
         {/* {texts.length > 0 
@@ -57,7 +57,7 @@ export default function AllTexts(){
 : <p>There are no foodItems yet</p>
 
 } */}
-<div className='textContainer'>
+<div className='alltextsContainer'>
         {displayedTexts.length > 0 
 ? displayedTexts.map(text => <TextCard key={text._id} text={text}  />)
 : <p>There are no foodItems yet</p>

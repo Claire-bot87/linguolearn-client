@@ -52,10 +52,12 @@ export default function SingleText() {
     <>
       <div className='space'></div>
       <div className="background">
-      <div className="childcard-div">
+      <div className="textcard-div">
         {text && <TextCard text={text}  />}
       </div>
+      <div className="allquestions-div">
     {text && < AllQuestions text = {text} />}
+    </div>
       </div>
     </>
   )

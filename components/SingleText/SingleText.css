@@ -6,5 +6,37 @@
     font-style: italic;
   }
 
-
+.background{
+display: flex;
+flex-direction: column;
+/* justify-content: center; */
+align-items: center;
+align-content: center;
+background-color: blueviolet;
+width: 100vw;
+height: 180vh;
+}
  
+.textcard-div{
+background-color: pink;
+width: 40vw;
+  display: flex;
+  justify-content: center;    /* Center content inside */
+  width: 100%;
+  max-width: 800px;           /* Keep readable width */
+  margin-bottom: 20px;
+}
+
+.allquestions-div{
+background-color: pink;
+width: 100vw;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;    /* Center content inside */
+  width: 100%;
+  max-width: 800px;           /* Keep readable width */
+  margin-bottom: 20px;
+  align-items: center;
+align-content: center;
+height: 50%;
+}

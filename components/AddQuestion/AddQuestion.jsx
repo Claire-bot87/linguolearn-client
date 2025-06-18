@@ -101,9 +101,11 @@ export default function AddQuestion() {
             <div className='all-questions'>
           {text && < AllQuestions text = {text} />}
           </div>
+          {text && (
           <Link to={`/texts/${text._id}`}>
              <button className="button" id="add-like" ></button>
      </Link>
+          )}
             </div>
         </section >
     )
