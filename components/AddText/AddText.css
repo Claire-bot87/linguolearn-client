@@ -1,12 +1,16 @@
-.add-child-container{
+.add-text-container{
     width: 100vw;
-    height: 100vh;
+    max-height: 50vh;
     display: flex;
     flex-direction:column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content:flex-start ;
+   
 }
 
-.add-child-container h1{
-    color: rgb(241, 203, 9);
+
+form{
+    background:linear-gradient(#ff334c, rgb(237, 114, 26));
+    /* background-color: aquamarine; */
 }

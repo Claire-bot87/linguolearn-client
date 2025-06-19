@@ -12,13 +12,13 @@ flex-direction: column;
 /* justify-content: center; */
 align-items: center;
 align-content: center;
-background-color: blueviolet;
+/* background-color: blueviolet; */
 width: 100vw;
 height: 180vh;
 }
  
 .textcard-div{
-background-color: pink;
+/* background-color: pink; */
 width: 40vw;
   display: flex;
   justify-content: center;    /* Center content inside */
@@ -28,7 +28,7 @@ width: 40vw;
 }
 
 .allquestions-div{
-background-color: pink;
+/* background-color: pink; */
 width: 100vw;
   display: flex;
   /* flex-direction: column; */
@@ -38,5 +38,5 @@ width: 100vw;
   margin-bottom: 20px;
   align-items: center;
 align-content: center;
-height: 50%;
+max-height: 100%;
 }

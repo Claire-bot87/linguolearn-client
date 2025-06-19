@@ -1,3 +1,18 @@
 .hero-div{
-    
+    background-image:url(./hero-gif.gif);
+    width: 75vw;
+    height: 75vh;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+
+}
+
+.home-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
 }

@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import { textShow } from '../../src/services/textService'
 import './SingleText.css'
 import '../../src/App.css'
+import { questionIndex } from '../../src/services/questionService'
 
 
 export default function SingleText() {
@@ -23,7 +24,15 @@ export default function SingleText() {
 
   const [allFoodItems, setAllFoodItems] = useState([])
 
-
+  const [questions, setQuestions]= useState ([])
+    //const { textId } = useParams()
+    useEffect(() => {
+      console.log(' 💕 TEXT ID' + text?._id)
+    questionIndex()
+     .then(data => setQuestions(data))
+    
+    .catch(err => console.log(err))
+    }, [])
 
   useEffect(() => {
     console.log(`BISCUIT ID = ${textId}`)
@@ -56,7 +65,7 @@ export default function SingleText() {
         {text && <TextCard text={text}  />}
       </div>
       <div className="allquestions-div">
-    {text && < AllQuestions text = {text} />}
+    {text && < AllQuestions text = {text} questions = {questions} />}
     </div>
       </div>
     </>

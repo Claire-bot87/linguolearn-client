@@ -5,6 +5,7 @@ import { UserContext } from '../../src/contexts/UserContext'
 import { questionCreate } from '../../src/services/questionService'
 import AllQuestions from '../../components/AllQuestions/AllQuestions.jsx'
 import { textShow } from '../../src/services/textService'
+import { questionIndex } from '../../src/services/questionService'
 
 export default function AddQuestion() {
 
@@ -25,6 +26,23 @@ export default function AddQuestion() {
     const [isLoading, setIsLoading] = useState('')
     const [error, setError] = useState('')
 
+    const [questions, setQuestions] = useState([])
+
+const fetchQuestions = async () => {
+  try {
+    const data = await questionIndex()
+    const filtered = data.filter(q => q.questiontext === textId)
+    setQuestions(filtered)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+// useEffect(() => {
+//   fetchQuestions()
+// }, [])
+
+
     useEffect(() => {
         if (!user) {
             navigate('/signin')
@@ -39,6 +57,7 @@ export default function AddQuestion() {
             console.log(`CHILD ID = ${textId}`)
             console.log("👶 CHILD DATA:", data)
             setText(data)
+            fetchQuestions()
           } catch (error) {
             if (error.status === 400) {
               setError('Text not found.')
@@ -58,8 +77,8 @@ export default function AddQuestion() {
         e.preventDefault()
         try {
             const data = await questionCreate(textId, questionData)
-            // navigate(`/texts/${data.questiontext}`)
-
+            setQuestionData({content:''})
+            fetchQuestions()
         } catch (error) {
             setErrors(error.response?.data?.errors || {})
         }
@@ -73,11 +92,11 @@ export default function AddQuestion() {
 
     return (
         <section className='add-text-container'>
-            <h1>Add Text</h1>
+            <h1>Add question</h1>
             <form onSubmit={handleSubmit}>
                 {/*name*/}
                 <div className='form-field'>
-                    <label htmlFor='content'>content</label>
+                    <label htmlFor='content'>question:</label>
                     <input className='input'
                         name='content'
                         id='content'
@@ -99,11 +118,11 @@ export default function AddQuestion() {
 <div className='questions-list'>
             <h2>{questionData.content}</h2>
             <div className='all-questions'>
-          {text && < AllQuestions text = {text} />}
+          {text && < AllQuestions text = {text} questions={questions} />}
           </div>
           {text && (
           <Link to={`/texts/${text._id}`}>
-             <button className="button" id="add-like" ></button>
+             <button className="button" id="add-like" >add Questions</button>
      </Link>
           )}
             </div>

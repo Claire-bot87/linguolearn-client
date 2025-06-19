@@ -1,37 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
-
-.new-text {
-   
-    background-image: url(./plus.png);
-    width: 40px;
-    height: 40px;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin:0px 60px 0px 220px;
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: var(--brand);
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .alltexts-article{
     display:flex;
     flex-direction: column;
     align-items:center;
     justify-content: center;
     margin:50px;
-
+   height: 100vh;
 }
 
 .alltextsContainer{
@@ -44,25 +20,26 @@ height: 100vh ;
 
 }
 
-.alltexts-article{
-display: flex;
-    flex-direction: row;
-    
-    height: 100vh;
 
+.main-div{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width:480px) {
 
-.textContainer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    /* display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr; */
-
-
-}
+.search-bar{
+background-color: aqua;
+width: 100%;
+height: 20 rem;
 }
 
+.search input{
+width: 20rem;
+height: 20 rem;
+padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}

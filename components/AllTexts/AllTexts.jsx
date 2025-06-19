@@ -37,7 +37,7 @@ export default function AllTexts(){
   
 
     return (
- <div>
+ <div className='main-div'>
               <div className='search'>
                 <i className="search-bar"> </i>
                 <input 
@@ -65,16 +65,6 @@ export default function AllTexts(){
 }
 </div>
 
-{/* <div className='textContainer'>
-        {texts.length > 0 
-? texts.map(text => <TextCard key={text._id} text={text}  />)
-: <p>There are no foodItems yet</p>
-
-}
-</div> */}
-   {/* <h2>{texts.name}</h2> */}
-
-   {/* <TextCard text={text}  /> */}
 
 </article>
 </div>

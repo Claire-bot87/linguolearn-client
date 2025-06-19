@@ -45,12 +45,12 @@ export default function AddText() {
     }
 
     return (
-        <section className='add-text-container'>
+        <div className='add-text-container'>
             <h1>Add Text</h1>
             <form onSubmit={handleSubmit}>
                 {/*name*/}
                 <div className='form-field'>
-                    <label htmlFor='name'>name</label>
+                    <label htmlFor='name'>title</label>
                     <input className='input'
                         name='name'
                         id='name'
@@ -63,7 +63,7 @@ export default function AddText() {
 
                 {/*gender*/}
                 <div className='form-field'>
-                    <label htmlFor='name'>gender</label>
+                    <label htmlFor='name'>content</label>
                     <input
                         className="input"
                         type="text"
@@ -82,7 +82,7 @@ export default function AddText() {
         </div>
 
             </form>
-        </section >
+        </div >
     )
 
 

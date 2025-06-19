@@ -4,32 +4,73 @@
     margin: none! important;
     display:flex;
     flex-direction:row;
-    justify-content:flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
+    justify-content:space-between;
+    align-items: space-between;
+    align-content: space-between;
+
+    width: 100%;
 
 }
 
-.button{
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 18px;
-    color: var(--text-primary);
-    background-color: var(--brand);
-    border: none;
-    margin: 0.4rem;
-    padding: 0.3rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    height: 2rem;
-    width: 2rem;
-    background-image: url(./heart.png);
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-  
+.buttons-container{
+display: flex;
+flex-direction: row;
+height: 4rem;
+margin: 1rem;
+}
+
+.nav-button1{
+
+
+  color:white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  background-color: #ff334c;
+  border:#b71782;
+  margin: 0.4rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  max-height: 6rem;
+    max-width: 50rem;
+  background-image: url('/assets/heart.png');
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10rem;
+
+
+}
+
+.nav-button2{
+
+
+  color:yellow;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  background-color: #ff334c;
+  border:#b71782;
+  margin: 0.4rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  max-height: 6rem;
+    max-width: 50rem;
+  background-image: url('/assets/heart.png');
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10rem;
+  border-color: yellow;
+
+
 }
 

@@ -22,6 +22,7 @@ export default function Nav(){
     return (
         <div className="nav-div">
         <TitleComponent />
+        <div className='buttons-container'>
         {user && user._id
                 ? (
                     <>
@@ -33,10 +34,12 @@ export default function Nav(){
                 )
                 : (
                     <>
-                        <button onClick={() => navigate('/signin')}className='button'>Sign in</button>
+                        <button onClick={() => navigate('/signin')}className='nav-button1'>Sign in</button>
+                        <button onClick={() => navigate('/signup')}className='nav-button2'>Sign up to get started!</button>
                     </>
                 )
             }
+            </div>
         {/* <Link to="/signin">Signin</Link>
         <Link to="/signup">Signup</Link> */}
         </div>
