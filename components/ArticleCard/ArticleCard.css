@@ -30,7 +30,7 @@
   }
   
   
-  .child-card-large {
+  .article-card {
    width:25vw;
     
     margin: 20px;
@@ -46,8 +46,9 @@
     height: 50vh;
   }
   
+
+
   .details{
-    /* background-color: red; */
     height:30%;
     display: flex;
     flex-direction: row;
@@ -168,14 +169,13 @@ justify-content: center;
         color: white;
       }
 
-.add-question-for-text{
+.add-question{
 width: 2.5rem;
 height: 2.5rem;
-background-image: url('https://res.cloudinary.com/dpv0j8frj/image/upload/v1750865280/circle_zdzl12.png')!important;
+background-image: url(./circle.png);
 background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
-
 }
 .add-question-container{
   display:flex;

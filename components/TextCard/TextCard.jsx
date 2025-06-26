@@ -49,7 +49,7 @@ const TextCard = ({ text }) => {
                 </div>
                 <div className='add-question-container'>
                     <Link to={`/texts/${text._id}/add`}>
-                <div className='add-question'></div>
+                <div className='add-question-for-text'></div>
                 </Link>
                 </div>
             </div>

@@ -11,7 +11,8 @@ import AddQuestion from '../components/AddQuestion/AddQuestion'
 //import AllQuestions from '../components/AllQuestions/AllQuestions'
 import TitleComponent from '../components/TitleComponent/TitleComponent.jsx'
 import NewsSearch from '../components/NewsSearch/NewsSearch'
-
+import SingleArticle from '../components/SingleArticle/SingleArticle'
+// import ShowArticle from '../components/ShowArticle/ShowArticle'
 
 function App() {
  
@@ -34,6 +35,8 @@ function App() {
 {/* <Route path='/texts/:textId/edit' element={<UpdateText/>} />  */}
 <Route path='/texts/:textId/add' element={<AddQuestion/>} />
 {/* <Route path='/questions' element={<AllQuestions/>} /> */}
+<Route path='/articles/:encodedUrl' element={<SingleArticle/>} />
+{/* <Route path='/newsarticles/:encodedUrl' element={<ShowArticle/>} /> */}
 </Routes>
 </div>
     </>

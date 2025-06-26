@@ -8,7 +8,7 @@ export default function AddText() {
 
     const [formData, setFormData] = useState({
         name: '',
-        gender: '',
+        bodyoftext: '',
 
     })
 
@@ -61,16 +61,16 @@ export default function AddText() {
                     </input>
                 </div>
 
-                {/*gender*/}
+                {/*bodyoftext*/}
                 <div className='form-field'>
                     <label htmlFor='name'>content</label>
                     <input
                         className="input"
                         type="text"
-                        name="gender"
-                        id="gender"
-                        placeholder="add gender"
-                        value={formData.gender}
+                        name="bodyoftext"
+                        id="bodyoftext"
+                        placeholder="add text"
+                        value={formData.bodyoftext}
                         onChange={handleChange}
                         required
                     />

@@ -41,12 +41,15 @@ export default function Signin(){
         const data = await signin(formData)
         console.log(`DATA${data._id}`)
         setToken(data.token)
-    
-        setUser(getUserFromToken())
-        console.log(`🌸 USER${user._id}`)
+
+      //   setUser(getUserFromToken())
+      //   console.log(`🌸 USER${user._id}`)
 
      
-      navigate(`/users/${user._id}`)
+      // navigate(`/users/${user._id}`)
+      const newUser = getUserFromToken()
+setUser(newUser)
+navigate(`/users/${newUser._id}`)
       } catch (error) {
       //   setErrors(error.response.data.errors)
         setErrors(error.message)
