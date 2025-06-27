@@ -64,9 +64,9 @@ const addArticleToTexts = useCallback(async (article) => {
       name: article.title || 'Untitled',
       bodyoftext: article.description || 'No description provided.'
     }
-
+    console.log('✅ Article saved as text:', payload)
     const data = await textCreate(payload)
-    console.log('✅ Article saved as text:', data)
+   
     navigate(`/texts/${data._id}`)
   } catch (error) {
     console.error('❌ Error saving article as text:', error.response?.data || error.message)

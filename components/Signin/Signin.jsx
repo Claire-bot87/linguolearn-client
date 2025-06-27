@@ -68,7 +68,9 @@ navigate(`/users/${newUser._id}`)
     return (
       <section className='container-box'>
         <div className="container">
-             
+             <div className='signin-message-div'>
+              <h1>Please sign in to continue with LinguoLearn</h1>
+             </div>
         
         <h1>Sign in</h1>
        

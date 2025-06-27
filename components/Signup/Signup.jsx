@@ -41,7 +41,9 @@ export default function Signup(){
 return(
   <section className='container-box'>
     <div className ='container'>
-
+ <div className='signup-message-div'>
+              <h1>Please sign up to continue with LinguoLearn</h1>
+             </div>
 <h1>Signup</h1>
 <p className="signup">You are creating an account</p>
 

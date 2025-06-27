@@ -3,6 +3,8 @@ import { textDelete } from '../../src/services/textService'
 import { Link, useNavigate, useLocation } from 'react-router'
 //import { useParams } from 'react-router'
 import { UserContext } from '../../src/contexts/UserContext'
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 import './TextCard.css'
 
@@ -47,10 +49,14 @@ const TextCard = ({ text }) => {
                 <div className="single-child-box">
                     <h5>{text.bodyoftext}</h5>
                 </div>
-                <div className='add-question-container'>
+                <div className='add-question-container'
+                data-tooltip-id="info-tooltip"
+                data-tooltip-content="This button refreshes your dashboard data"
+                >
                     <Link to={`/texts/${text._id}/add`}>
                 <div className='add-question-for-text'></div>
                 </Link>
+                <Tooltip id="info-tooltip" place="right" effect="solid" />
                 </div>
             </div>
 )}

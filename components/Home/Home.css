@@ -1,11 +1,17 @@
 .hero-div{
     background-image:url(./hero-gif.gif);
-    width: 75vw;
-    height: 75vh;
+    width: 90%;
+    height: 80%;
     background-size: contain; 
     background-position: center;
     background-repeat: no-repeat;
     justify-content: center;
+    border-color:#ff334c;
+    border-radius: 2%;
+    border-width: 0.25rem;
+    padding: 2rem;
+  
+    border-style: solid;
 
 }
 
@@ -15,4 +21,35 @@
     display: flex;
     flex-direction:column;
     align-items: center;
+}
+
+.get-started-button{
+
+  color:white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+  background-color: #ff334c;
+  border:#b71782;
+  margin: 0.4rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  max-height: 20rem;
+  max-width: 50rem;
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20rem;
+  height:5rem;
+}
+
+.hero-div-container{
+width: 60vw;
+height: 70vh;
+
+
 }

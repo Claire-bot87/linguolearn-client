@@ -31,13 +31,20 @@ const NewsSearch = () => {
 
 
   return (
-    <div>
-      <h2></h2>
+
+    <div className='search'>
+
+      <h2>type in a keyword to search news articles for your student to read</h2>
       <input
         type="text"
         value={keyword}
         onChange={e => setKeyword(e.target.value)}
         placeholder="Enter a topic (e.g. climate, books)"
+        onKeyDown={(e)=> {
+          if(e.key ==='Enter'){
+            getArticles()
+          }
+        }}
       />
       <button onClick={getArticles} disabled={loading}>
         {loading ? 'Searching...' : 'Search'}

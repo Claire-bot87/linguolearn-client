@@ -28,14 +28,15 @@ export default function Nav(){
                     <>
                         
                         <button onClick={signOut}className='button'>Sign out</button>
-                        <button onClick={() => navigate(`/users/${user._id}`)}className='button'>👤</button>
-                        <button onClick={() => navigate(`/users/${user._id}/gotos`)}className='button'>Go Tos 🥗</button>
+                        <button onClick={() => navigate(`/users/${user._id}`)}className='button'>Your profile👤</button>
+                        <button onClick={() => navigate(`/users/${user._id}/gotos`)}className='nav-button1'>All Texts</button>
                     </> 
                 )
                 : (
                     <>
                         <button onClick={() => navigate('/signin')}className='nav-button1'>Sign in</button>
                         <button onClick={() => navigate('/signup')}className='nav-button2'>Sign up to get started!</button>
+                        <button onClick={() => navigate(`/users/${user._id}/gotos`)}className='nav-button1'>All Texts</button>
                     </>
                 )
             }
