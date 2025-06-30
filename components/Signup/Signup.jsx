@@ -1,6 +1,6 @@
 
 import {useState} from 'react'
-import { useNavigate} from 'react-router'
+import { useNavigate, useLocation } from 'react-router'
 import {signup} from '../../src/services/userService'
 import {UserContext} from '../../src/contexts/UserContext'
 import './Signup.css';
@@ -16,8 +16,12 @@ export default function Signup(){
 
     const [errors, setErrors] = useState({})
 
-     const navigate = useNavigate()
+const [showPassword, setShowPassword] = useState(false)
+const [showConfPassword, setShowConfPassword] = useState(false)
 
+     const navigate = useNavigate()
+const location = useLocation()
+const from = location.state?.from || '/'
     const handleSubmit = async (e) => {
        
      e.preventDefault()
@@ -26,7 +30,8 @@ export default function Signup(){
         try {
             await signup(formData)
            
-            navigate('/signin')
+            navigate('/signin', { state: { from } })
+            // navigate(from)
         }catch(error){
             console.error(error)
             setErrors(error.response?.data?.errors || {})
@@ -78,8 +83,9 @@ return(
 
 <div className="form-control">
           <label htmlFor="password">Password</label>
+          <div className="password-wrapper">
           <input className="input"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             name="password" 
             id="password"
             placeholder="Enter a password"
@@ -87,20 +93,41 @@ return(
             onChange={handleChange}
           />
         
+  <span
+    className="toggle-password"
+    onClick={() => setShowPassword(!showPassword)}
+    style={{ cursor: 'pointer', marginLeft: '8px' }}
+    title={showPassword ? 'Hide password' : 'Show password'}
+  >
+    {showPassword ? '🙈' : '👁️'}
+  </span>
+
+        </div>
           { errors.password && <p className='error-message'>{errors.password}</p> }
         </div>
 
 
         <div className="form-control">
           <label htmlFor="confirmPassword">Confirm password</label>
+          <div className="password-wrapper1">
           <input className="input"
-            type="password"
+            type={showConfPassword ? 'text' : 'password'}
             name="password_confirmation" 
             id="password_confirmation"
             placeholder="Re-type the password"
             required
             onChange={handleChange}
           />
+  <span
+    className="toggle-password"
+    onClick={() => setShowConfPassword(!showConfPassword)}
+    style={{ cursor: 'pointer', marginLeft: '8px' }}
+    title={showConfPassword ? 'Hide password' : 'Show password'}
+  >
+    {showConfPassword ? '🙈' : '👁️'}
+  </span>
+
+          </div>
         {formData.password && formData.confirmPassword && formData.password !== formData.confirmPassword &&
   <p className='error-message'>Passwords do not match</p>
 }

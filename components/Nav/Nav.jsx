@@ -27,8 +27,8 @@ export default function Nav(){
                 ? (
                     <>
                         
-                        <button onClick={signOut}className='button'>Sign out</button>
-                        <button onClick={() => navigate(`/users/${user._id}`)}className='button'>Your profile👤</button>
+                        <button onClick={signOut}className='nav-button1'>Sign out</button>
+                        <button onClick={() => navigate(`/users/${user._id}`)}className='nav-button1'>Your profile👤</button>
                         <button onClick={() => navigate(`/users/${user._id}/gotos`)}className='nav-button1'>All Texts</button>
                     </> 
                 )

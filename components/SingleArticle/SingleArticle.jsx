@@ -18,8 +18,8 @@ export default function SingleArticle() {
 // const { user } = useContext(UserContext)
 const navigate = useNavigate()
 
-  const { encodedUrl } = useParams();
-  const articleUrl = decodeURIComponent(encodedUrl)
+  const { article_id } = useParams();
+  
 
   // State
  const [article, setArticle] = useState(null)
@@ -41,7 +41,7 @@ const navigate = useNavigate()
     // If you're storing articles in localStorage or global state, fetch from there
     const storedArticles = JSON.parse(localStorage.getItem('articles')) || []
 
-    const foundArticle = storedArticles.find(a => a.url === articleUrl)
+    const foundArticle = storedArticles.find(a => a.article_id === article_id)
 
     if (foundArticle) {
       setArticle(foundArticle)
@@ -50,7 +50,7 @@ const navigate = useNavigate()
     }
 
     setIsLoading(false)
-  }, [articleUrl])
+  }, [article_id])
 
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>{error}</p>

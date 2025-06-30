@@ -175,6 +175,12 @@ background-image: url('https://res.cloudinary.com/dpv0j8frj/image/upload/v175086
 background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+   position: relative;
+  z-index: 1;
+  
+
 
 }
 .add-question-container{

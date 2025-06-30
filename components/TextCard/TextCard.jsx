@@ -55,8 +55,9 @@ const TextCard = ({ text }) => {
                 >
                     <Link to={`/texts/${text._id}/add`}>
                 <div className='add-question-for-text'></div>
+                               <Tooltip id="info-tooltip" place="right" effect="solid" />
                 </Link>
-                <Tooltip id="info-tooltip" place="right" effect="solid" />
+ 
                 </div>
             </div>
 )}

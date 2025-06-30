@@ -1,6 +1,6 @@
 import './AddQuestion.css'
 import { useState, useEffect, useContext } from 'react'
-import { useParams, useNavigate, Link } from 'react-router'
+import { useParams, useNavigate, Link, useLocation} from 'react-router'
 import { UserContext } from '../../src/contexts/UserContext'
 import { questionCreate } from '../../src/services/questionService'
 import AllQuestions from '../../components/AllQuestions/AllQuestions.jsx'
@@ -20,7 +20,7 @@ export default function AddQuestion() {
     const { user } = useContext(UserContext)
 
     const navigate = useNavigate()
-
+const location = useLocation()
     const [text, setText] = useState(null)
     const [errors, setErrors] = useState({})
     const [isLoading, setIsLoading] = useState('')
@@ -45,7 +45,7 @@ const fetchQuestions = async () => {
 
     useEffect(() => {
         if (!user) {
-            navigate('/signin')
+            navigate('/signin', { state: { from: location.pathname } })
         }
     }, [user, navigate])
 

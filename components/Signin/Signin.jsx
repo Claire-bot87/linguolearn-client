@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate, useLocation, Link } from 'react-router'
 import { signin } from '../../src/services/userService'
 import { setToken } from '../../utils/auth.js'
 import { getUserFromToken } from '../../utils/auth.js'
@@ -22,17 +22,19 @@ export default function Signin(){
       password: ''
     })
     const [errors, setErrors] = useState({})
-  
-  
-      const navigate = useNavigate();
 
+  const [showPassword, setShowPassword] = useState(false)
+
+      const location = useLocation()
+      const navigate = useNavigate();
+      const from = location.state?.from || '/'
       const { user } = useContext(UserContext)
 
-      useEffect(() => {
-        if (user) {
-          navigate(`/users/${user._id}`);
-        }
-      }, [user, navigate]);
+     useEffect(() => {
+  if (user && !location.state?.from) {
+    navigate(`/`);
+  }
+}, [user, navigate, location.state?.from])
   
     // Events
     const handleSubmit = async (e) => {
@@ -49,12 +51,17 @@ export default function Signin(){
       // navigate(`/users/${user._id}`)
       const newUser = getUserFromToken()
 setUser(newUser)
-navigate(`/users/${newUser._id}`)
+// navigate(`/users/${newUser._id}`)
+navigate(from)
       } catch (error) {
-      //   setErrors(error.response.data.errors)
-        setErrors(error.message)
+        console.error(error)
+        const message = error.response?.data?.message
+        if (message) {
+    setErrors({ general: message })
+      //setErrors(error.response?.data?.errors || {})
+        //setErrors(error.message)
       }
-    }
+    }}
 
    
   
@@ -94,16 +101,28 @@ navigate(`/users/${newUser._id}`)
           {/* Password */}
           <div className="form-control">
             <label htmlFor="password">Password</label>
+            <div className="password-wrapper">
             <input className="input"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password" 
               id="password"
               placeholder="Enter a password"
               required
               onChange={handleChange}
             />
+  <span
+    className="toggle-password"
+    onClick={() => setShowPassword(!showPassword)}
+    style={{ cursor: 'pointer', marginLeft: '8px' }}
+    title={showPassword ? 'Hide password' : 'Show password'}
+  >
+    {showPassword ? '🙈' : '👁️'}
+  </span>
+
+            </div>
             { errors.password && <p className='error-message'>{errors.password}</p> }
           </div>
+  { errors.general && <p className="error-message">{errors.general}</p> }
   
   
               <button 
@@ -115,10 +134,10 @@ navigate(`/users/${newUser._id}`)
   </button>
   
         </form>
-  
-  
-        <Button onClick={() => navigate('/signup')} variant='warning'>Don't have an account yet? Sign up here!</Button>
+   <Link to="/signup" state={{ from }}>
+    <Button variant='warning'>Don't have an account yet? Sign up here!</Button>
+        </Link>
         </div>
       </section>
     )
-  }
+    }

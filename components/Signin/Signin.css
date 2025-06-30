@@ -28,6 +28,7 @@
     max-width: 400px;
     background: rgb(241, 203, 9);
     color:black;
+    
   }
   
 
@@ -38,6 +39,27 @@
 }
 
 .form-control{
-  /* background-color: rgb(241, 203, 9); */
+  
   margin:1rem;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+
+}
+
+.error-message{
+    margin: 1rem;
+    background-color:red;
+    color:white;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .password-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  font-size: 1.2rem;
 }

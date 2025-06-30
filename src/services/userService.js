@@ -46,7 +46,9 @@ export const signup = async (formData) => {
         console.log(`💕RES.DATA ${JSON.stringify(res.data)}`)
         return res.data
     } catch (error) {
-        throw new error
+      console.error('Backend Error:', error.response?.data || error)
+        // throw new error
+        throw error
     }
 }
 

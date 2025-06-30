@@ -14,10 +14,10 @@ const NewsSearch = () => {
     setLoading(true)
     try {
         const data = await fetchArticles(keyword)
-      if (data.articles) {
-        setArticles(data.articles);
-        localStorage.setItem('articles', JSON.stringify(data.articles))
-        console.log('ARTICLES' , data.articles)
+      if (data.results) {
+        setArticles(data.results);
+        localStorage.setItem('articles', JSON.stringify(data.results))
+        console.log('ARTICLES' , data.results)
         console.log('NEW CONSOLE LOG🪵')
       }
     } catch (error) {
@@ -49,14 +49,16 @@ const NewsSearch = () => {
       <button onClick={getArticles} disabled={loading}>
         {loading ? 'Searching...' : 'Search'}
       </button>
-
+<p style={{ fontSize: '0.8rem', color: '#666' }}>
+  {/* Powered by <a href="https://newsdata.io/" target="_blank" rel="noopener noreferrer">NewsData.io</a> */}
+</p>
  
 
 <div className="all-articles-div">
   {articles.length > 0 ? (
     <div className="articles-grid">
       {articles.map(article => (
-        <ArticleCard key={article.title} article={article} />
+        <ArticleCard key={article.article_id || article.link} article={article} />
       ))}
     </div>
   ) : (

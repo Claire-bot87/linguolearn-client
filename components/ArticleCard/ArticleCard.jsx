@@ -14,21 +14,21 @@ const ArticleCard = ({ article }) => {
 console.log(article.url)
 
   const isNewsSearch = location.pathname === '/newssearch';
-  const isSingleArticle = location.pathname === `/articles/${encodeURIComponent(article.url)}`;
+  const isSingleArticle = location.pathname === `/articles/${article.article_id || article.link}`;
 
 
     return (
         <>
 {isNewsSearch && (
-<Link to={`/articles/${encodeURIComponent(article.url)}`}>
+<Link to={`/articles/${article.article_id || article.link}`}>
             <div className="article-card">
                 <div className="for-name-and-image">
                    
-                    <h2>{article.title}</h2>
+                    <h2>{article.title || 'Untitled'}</h2>
                     
                 </div>
                 <div className="single-child-box">
-                    <h5>{article.description}</h5>
+                    <h5>{article.content || 'No content available'}</h5>
                 </div>
                 <div className='add-question-container'>
                 </div>
@@ -45,7 +45,7 @@ console.log(article.url)
                     
                 </div>
                 <div className="single-child-box">
-                    <h5>{article.description}</h5>
+                    <h5>{article.content}</h5>
                 </div>
                 <div className='add-question-container'>
                 </div>

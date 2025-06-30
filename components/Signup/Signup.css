@@ -23,3 +23,25 @@
     max-width: 400px;
   }
   
+
+  .error-message{
+    margin: 1rem;
+    background-color:red;
+    color:white;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .password-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+  .password-wrapper1 {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  font-size: 1.2rem;
+}
