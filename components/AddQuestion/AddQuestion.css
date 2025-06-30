@@ -45,7 +45,7 @@
   text-align: center;
   height: 2rem;
   width: 2rem;
-  background-image: url('/assets/heart.png');
+  /* background-image: url('/assets/heart.png'); */
   background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;

@@ -37,7 +37,7 @@ margin: 1rem;
   text-align: center;
   max-height: 6rem;
     max-width: 50rem;
-  background-image: url('/assets/heart.png');
+  /* background-image: url('/assets/heart.png'); */
   background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
@@ -64,7 +64,7 @@ margin: 1rem;
   text-align: center;
   max-height: 6rem;
     max-width: 50rem;
-  background-image: url('/assets/heart.png');
+  /* background-image: url('/assets/heart.png'); */
   background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
